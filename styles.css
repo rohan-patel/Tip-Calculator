@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --darker-grayish-cyan: hsl(186, 14%, 43%);
+  --dark-grayish-cyan: hsl(184, 14%, 56%);
+  --medium-grayish-cyan: hsl(172, 78%, 70%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --lighter-grayish-cyan: hsl(189, 41%, 97%);
+  --strong-cyan: hsl(172, 67%, 45%);
+  --error: #ff9494;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-family: 'Space Mono', monospace;
+  background-color: var(--light-grayish-cyan);
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container > img {
+  width: min-content;
+}
+
+.card {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  gap: 1.5rem;
+  width: 60%;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card > div {
+  flex: 1;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0.75rem 1rem;
+}
+
+span {
+  font-size: 0.75rem;
+}
+
+.error {
+  visibility: hidden;
+}
+
+.bill-amount,
+.people {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.bill-input,
+.people-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  background-color: var(--lighter-grayish-cyan);
+  border-radius: 5px;
+  flex-basis: 100%;
+}
+
+.bill-input > input,
+.people-input > input {
+  width: 100%;
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  text-align: right;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.bill-input input:focus,
+.people-input input:focus {
+  border: none;
+  outline: none;
+}
+
+.input-heading {
+  color: var(--very-dark-cyan);
+  font-weight: 700;
+}
+
+.rate-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.rate {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  box-sizing: border-box;
+  gap: 1rem;
+}
+
+.rate > * {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 0.5rem 0.25rem;
+  font-weight: 700;
+}
+
+.rate > button {
+  background-color: var(--very-dark-cyan);
+  color: var(--lighter-grayish-cyan);
+  cursor: pointer;
+}
+
+.rate > button:hover {
+  background-color: var(--medium-grayish-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.rate > input {
+  width: 100%;
+  background-color: var(--lighter-grayish-cyan);
+  color: var(--very-dark-cyan);
+  padding: 0.15rem 0.25rem;
+  text-align: right;
+}
+
+.rate > input::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.outputs {
+  background-color: var(--very-dark-cyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.output-amount-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.tip-amount-container,
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tip-amount-container {
+  padding-top: 1.5rem;
+}
+
+.tip-amount-text,
+.total-amount-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 0.75rem;
+}
+
+p {
+  margin: 0;
+}
+
+p.tip-amount,
+p.total {
+  font-size: 0.85rem;
+  color: var(--lighter-grayish-cyan);
+  font-weight: 700;
+}
+
+p.person {
+  color: var(--dark-grayish-cyan);
+}
+
+.amount-value {
+  color: var(--strong-cyan);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.reset-button {
+  width: 100%;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--very-dark-cyan);
+  background-color: var(--strong-cyan);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background-color: var(--medium-grayish-cyan);
+  color: var(--very-dark-cyan);
+}
+
+@media screen and (max-width: 769px) {
+  .card{
+    flex-direction: column;
+    width: 66%;
+  }  
+
+  .rate {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .outputs {
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .amount-value {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .card {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .rate {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .outputs {
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .amount-value {
+    font-size: 1.5rem;
+  }
+}
