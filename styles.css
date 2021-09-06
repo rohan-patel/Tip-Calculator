@@ -1,14 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
 :root {
   --very-dark-cyan: hsl(183, 100%, 15%);
   --darker-grayish-cyan: hsl(186, 14%, 43%);
   --dark-grayish-cyan: hsl(184, 14%, 56%);
-  --medium-grayish-cyan: hsl(172, 78%, 70%);
   --light-grayish-cyan: hsl(185, 41%, 84%);
   --lighter-grayish-cyan: hsl(189, 41%, 97%);
   --strong-cyan: hsl(172, 67%, 45%);
   --error: #ff9494;
+  --white: hsl(0, 0%, 100%);
+  --medium-grayish-cyan: hsl(171, 55%, 75%);
+  /* --medium-reset-cyan: hsl(188, 73%, 71%); */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 * {
@@ -18,7 +25,7 @@
 body {
   font-size: 1.5rem;
   font-weight: normal;
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   background-color: var(--light-grayish-cyan);
   padding: 0;
   margin: 0;
@@ -30,6 +37,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  gap: 4rem;
 }
 
 .container > img {
@@ -41,10 +49,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: var(--white);
   gap: 1.5rem;
   width: 60%;
-  border-radius: 15px;
+  max-width: 912px;
+  border-radius: 20px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -85,6 +94,7 @@ span {
   background-color: var(--lighter-grayish-cyan);
   border-radius: 5px;
   flex-basis: 100%;
+  cursor: pointer;
 }
 
 .bill-input > input,
@@ -96,6 +106,8 @@ span {
   text-align: right;
   font-weight: 700;
   font-family: inherit;
+  color: var(--very-dark-cyan);
+  cursor: pointer;
 }
 
 .bill-input input:focus,
@@ -124,7 +136,7 @@ span {
 }
 
 .rate > * {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 1.5rem;
   border-radius: 5px;
   outline: none;
@@ -133,15 +145,10 @@ span {
   font-weight: 700;
 }
 
-.rate > button {
-  background-color: var(--very-dark-cyan);
-  color: var(--lighter-grayish-cyan);
-  cursor: pointer;
-}
-
 .rate > button:hover {
   background-color: var(--medium-grayish-cyan);
   color: var(--very-dark-cyan);
+  cursor: pointer;
 }
 
 .rate > input {
@@ -150,6 +157,7 @@ span {
   color: var(--very-dark-cyan);
   padding: 0.15rem 0.25rem;
   text-align: right;
+  cursor: pointer;
 }
 
 .rate > input::-webkit-input-placeholder {
@@ -213,7 +221,7 @@ p.person {
 
 .reset-button {
   width: 100%;
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--very-dark-cyan);
@@ -231,10 +239,10 @@ p.person {
 }
 
 @media screen and (max-width: 769px) {
-  .card{
+  .card {
     flex-direction: column;
     width: 66%;
-  }  
+  }
 
   .rate {
     grid-template-columns: repeat(2, 1fr);

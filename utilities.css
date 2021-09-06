@@ -1,3 +1,5 @@
+
+
 .bg-dark {
   background-color: var(--very-dark-cyan);
   color: var(--lighter-grayish-cyan);
@@ -15,6 +17,7 @@
 
 .error {
   color: var(--error);
+  font-weight: 700;
 }
 
 /* .green-border:focus {
@@ -51,5 +54,10 @@
 
 .green-border-custom:focus {
   border: 2px solid var(--strong-cyan);
+  border-radius: 5px;
+}
+
+.error-border-custom:focus {
+  border: 2px solid var(--error);
   border-radius: 5px;
 }
