@@ -6,8 +6,8 @@ class TipCalculator {
   }
 
   reset() {
-    this.tipAmountValue = "0.0";
-    this.totalAmountVlaue = "0.0";
+    this.tipAmountValue = "0.00";
+    this.totalAmountVlaue = "0.00";
     billInputTextElement.value = "";
     peopleInputTextElement.value = "";
     customRateInputElement.value = "";
@@ -116,8 +116,8 @@ class TipCalculator {
       this.peopleInvalid ||
       this.rateInvalid
     ) {
-      this.tipAmountValue = "0.0";
-      this.totalAmountVlaue = "0.0";
+      this.tipAmountValue = "0.00";
+      this.totalAmountVlaue = "0.00";
       this.updateDisplay();
       return;
     }
